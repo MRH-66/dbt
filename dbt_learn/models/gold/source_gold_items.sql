@@ -4,7 +4,7 @@ SELECT
     *,
     ROW_NUMBER() OVER (PARTITION BY id ORDER BY updated DESC) AS deduplication_id   
 FROM
-    {{ source('source', 'itmes') }} 
+    {{ source('source', 'items') }} 
 )
 SELECT
     id,name,category,updated
